@@ -4,10 +4,15 @@
 
 ---
 
-## Requirements
+## Set up enviroment & requirements
 
 ```
-pip install Flask
+$ cd project_folder
+$ python -m venv venv
+$ source venv/bin/activate
+(venv) $ pip install --upgrade pip
+(venv) $ pip install Flask
+(venv) $ flask run
 ```
 
 ---
