@@ -111,6 +111,20 @@ This setup is **fully correct for web development** — small, clean, and scales
 
 ---
 
+The **10 steps we documented are purely about the programming logic** that makes your app modular and scalable:
+
+1. **Config class** → centralizes settings.
+2. **App factory** → creates the Flask app instance.
+3. **Blueprint definitions** → separate modules (`home_bp`, `addition_bp`).
+4. **Blueprint routes** → handle URL endpoints.
+5. **Template rendering** → each blueprint has its own templates.
+6. **Error handling** → global error registration.
+7. **Application entry point** → runs the app.
+
+Everything else (empty folders, base templates, CSS, JS) is optional or supportive—they can **download or create those themselves**. The focus of the 10 steps is **purely the programming logic** that makes the app modular, maintainable, and scalable.
+
+---
+
 ## 📄 License
 
 This project is for **learning and educational use**.
