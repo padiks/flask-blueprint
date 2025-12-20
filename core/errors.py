@@ -33,4 +33,4 @@ def register_errors(app):
             A rendered '404.html' template with HTTP status code 404.
         """
         # Render a custom 404 error page located in templates/404.html
-        return render_template("404.html"), 404
+        return render_template("404.html", title="Page not found - Flask Blueprint"), 404
