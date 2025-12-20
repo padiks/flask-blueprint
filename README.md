@@ -22,41 +22,41 @@ $ source venv/bin/activate
 ```
 project_folder/
 |
-+-- app.py                               # Main entry point (creates Flask app, registers blueprints, runs server)
++-- app.py                       # Main entry point (creates Flask app, registers blueprints, runs server)
 |
-+-- config.py                            # Global configuration (DEBUG, SECRET_KEY, database paths, etc.)
++-- config.py                    # Global configuration (DEBUG, SECRET_KEY, database paths, etc.)
 |
-+-- core/                                # App-wide global infrastructure (app factory, error handling, extensions)
-|   +-- __init__.py                      # Marks core as a package
-|   +-- app_factory.py                   # Application factory (create_app) and blueprint registration
-|   +-- extensions.py                    # Initialize shared extensions (db, login manager, etc.)
-|   +-- errors.py                        # Global error handlers (404, 500)
++-- core/                        # App-wide global infrastructure (app factory, error handling, extensions)
+|   +-- __init__.py              # Marks core as a package
+|   +-- app_factory.py           # Application factory (create_app) and blueprint registration
+|   +-- extensions.py            # Optional: Initialize shared extensions (db, login manager, etc.)
+|   +-- errors.py                # Global error handlers (404, 500)
 |
-+-- apps/                                # Modular isolated feature blueprints (home, addition)
++-- apps/                        # Modular isolated feature blueprints (home, addition)
 |   |
 |   +-- home/
-|   |   +-- __init__.py                  # Home blueprint definition
-|   |   +-- routes.py                    # Home routes (views)
+|   |   +-- __init__.py          # Home blueprint definition
+|   |   +-- routes.py            # Home routes (views)
 |   |   +-- templates/home/
-|   |       +-- view.html                # Home page template
+|   |       +-- view.html        # Home page template
 |   |
 |   +-- addition/
-|   |   +-- __init__.py                  # Addition blueprint definition
-|   |   +-- routes.py                    # Addition logic and routes
+|   |   +-- __init__.py          # Addition blueprint definition
+|   |   +-- routes.py            # Addition logic and routes
 |   |   +-- templates/addition/
-|   |       +-- view.html                # Addition page template
+|   |       +-- view.html        # Addition page template
 |   |
-|   +-- <other-modules>/                 # Future blueprints (subtraction, multiplication, etc.)
+|   +-- <other-modules>/         # Future blueprints (subtraction, multiplication, etc.)
 |
-+-- templates/                           # Global/shared templates
-|   +-- base.html                        # Main layout (navbar, footer) with dynamic {{ title }}
-|   +-- 404.html                         # Global 404 error page
++-- templates/                   # Global/shared templates
+|   +-- base.html                # Main layout (navbar) with dynamic {{ title }}
+|   +-- 404.html                 # Global 404 error page
 |
-+-- static/                              # Static assets
++-- static/                      # Static assets
     +-- css/
-    |   +-- style.css                    # Global styles
+    |   +-- style.css            # Global styles
     +-- img/
-        +-- favicon.png                  # Site favicon
+        +-- favicon.png          # Site favicon
 ```
 
 ---
