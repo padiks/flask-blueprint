@@ -54,9 +54,7 @@ project_folder/
 |
 +-- static/                      # Static assets
     +-- css/
-    |   +-- style.css            # Global styles
-    +-- img/
-        +-- favicon.png          # Site favicon
+        +-- style.css            # Global styles
 ```
 
 ---
