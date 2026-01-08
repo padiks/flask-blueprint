@@ -37,13 +37,13 @@ project_folder/
 +-- core/                                # App-wide infrastructure
 |   +-- __init__.py                      # Marks core as a Python package
 |   +-- app_factory.py                   # create_app() and blueprint registration
-|   +-- errors.py                         # Global error handlers (404, 500)
+|   +-- errors.py                        # Global error handlers (404, 500)
 |
-+-- templates/                            # Project-wide templates
-|   +-- base.html                         # Base layout
-|   +-- 404.html                          # Global 404 page
++-- templates/                           # Project-wide templates
+|   +-- base.html                        # Base layout
+|   +-- 404.html                         # Global 404 page
 |
-+-- static/                               # Static assets
++-- static/                              # Static assets
     +-- css/
         +-- style.css
 ```
@@ -118,4 +118,5 @@ Everything else (empty folders, base templates, CSS, JS) is optional or supporti
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
