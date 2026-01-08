@@ -28,7 +28,7 @@ project_folder/
 +-- apps/                                # Modular blueprints (feature-based)
 |   +--primer/
 |   |   +-- __init__.py
-|   |   +-- routes.py                    # Book views/routes
+|   |   +-- routes.py                    # Module primer views/routes
 |   |   +-- templates/primer/
 |   |       +-- view.html
 |   |
@@ -53,7 +53,7 @@ project_folder/
 ### 1️⃣ **Separation of concerns**
 
 * `core/` → global infrastructure (app factory, error handling, extensions).
-* `apps/<module>/` → isolated feature blueprints (`home`, `addition`).
+* `apps/<module>/` → isolated feature blueprints (`primer`).
 * `templates/` → global layouts (`base.html`) with dynamic `{{ title }}` and error pages (`404.html`).
 * `static/` → CSS, JS, images.
 
@@ -82,7 +82,6 @@ Everything has a **clear place** — no spaghetti code in `app.py`.
 * You can easily add databases, login systems, or APIs via `core/extensions.py`.
 * URL structure is clean and configurable via `url_prefix`.
 * Templates and static files can be organized per module or globally.
-* Dynamic page titles supported via `{{ title }}` in `base.html`.
 
 ---
 
@@ -104,7 +103,7 @@ The **10 steps we documented are purely about the programming logic** that makes
 
 1. **Config class** → centralizes settings.
 2. **App factory** → creates the Flask app instance.
-3. **Blueprint definitions** → separate modules (`home_bp`, `addition_bp`).
+3. **Blueprint definitions** → separate modules (`primer_bp`).
 4. **Blueprint routes** → handle URL endpoints.
 5. **Template rendering** → each blueprint has its own templates.
 6. **Error handling** → global error registration.
@@ -118,5 +117,3 @@ Everything else (empty folders, base templates, CSS, JS) is optional or supporti
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
-
-
