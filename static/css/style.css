@@ -1,4 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400&display=swap");
 body {
-  font-family: "Noto Sans", "DejaVu Sans", Arial, sans-serif;
+	font-family: Cairo, Arial, sans-serif;
+	background-color: #f8fafc;
+}
+table.dataTable th,
+table.dataTable td {
+	padding: 0.25rem 0.5rem !important;
+	font-size: 0.85rem;
+}
+div.dataTables_wrapper .dataTables_length,
+div.dataTables_wrapper .dataTables_filter,
+div.dataTables_wrapper .dataTables_info,
+div.dataTables_wrapper .dataTables_paginate {
+	font-size: 0.85rem;
 }

@@ -1,16 +1,20 @@
-# app.py [b]
-# ------------------------
-# Entry point for the Flask application.
-# This file initializes the Flask app using the application factory pattern
-# and starts the development server when executed directly.
-
+# app.py
+# Import the application factory from core
 from core.app_factory import create_app
 
-# Create a Flask app instance using the factory function
+# -----------------------------
+# Create the Flask app
+# -----------------------------
+# create_app() returns a fully configured Flask app with:
+# - registered blueprints (modules like books, categories)
+# - global error handlers (404, 500)
+# - authentication and middleware
 app = create_app()
 
-# Run the app only if this script is executed directly
+# -----------------------------
+# Main entry point
+# -----------------------------
+# Run the app if this file is executed directly.
+# 'debug=True' enables hot reload and better error messages in development.
 if __name__ == "__main__":
-    # Starts the Flask development server on default host (127.0.0.1) and port (5000)
-    # Use 'debug=True' in config to enable hot reload and detailed error pages
-    app.run()
+    app.run(debug=True)
