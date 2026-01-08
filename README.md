@@ -22,39 +22,30 @@ $ source venv/bin/activate
 ```
 project_folder/
 |
-+-- app.py                       # Main entry point (creates Flask app, registers blueprints, runs server)
++-- app.py                               # Minimal entry point, calls create_app()
++-- config.py                            # App configuration (settings.py)
 |
-+-- config.py                    # Global configuration (DEBUG, SECRET_KEY, database paths, etc.)
-|
-+-- core/                        # App-wide global infrastructure (app factory, error handling, extensions)
-|   +-- __init__.py              # Marks core as a package
-|   +-- app_factory.py           # Application factory (create_app) and blueprint registration
-|   +-- extensions.py            # Optional: Initialize shared extensions (db, login manager, etc.)
-|   +-- errors.py                # Global error handlers (404, 500)
-|
-+-- apps/                        # Modular isolated feature blueprints (home, addition)
++-- apps/                                # Modular blueprints (feature-based)
+|   +--primer/
+|   |   +-- __init__.py
+|   |   +-- routes.py                    # Book views/routes
+|   |   +-- templates/primer/
+|   |       +-- view.html
 |   |
-|   +-- home/
-|   |   +-- __init__.py          # Home blueprint definition
-|   |   +-- routes.py            # Home routes (views)
-|   |   +-- templates/home/
-|   |       +-- view.html        # Home page template
-|   |
-|   +-- addition/
-|   |   +-- __init__.py          # Addition blueprint definition
-|   |   +-- routes.py            # Addition logic and routes
-|   |   +-- templates/addition/
-|   |       +-- view.html        # Addition page template
-|   |
-|   +-- <other-modules>/         # Future blueprints (subtraction, multiplication, etc.)
+|   +-- <other-modules>/                 # Future blueprints
 |
-+-- templates/                   # Global/shared templates
-|   +-- base.html                # Main layout (navbar) with dynamic {{ title }}
-|   +-- 404.html                 # Global 404 error page
++-- core/                                # App-wide infrastructure
+|   +-- __init__.py                      # Marks core as a Python package
+|   +-- app_factory.py                   # create_app() and blueprint registration
+|   +-- errors.py                         # Global error handlers (404, 500)
 |
-+-- static/                      # Static assets
++-- templates/                            # Project-wide templates
+|   +-- base.html                         # Base layout
+|   +-- 404.html                          # Global 404 page
+|
++-- static/                               # Static assets
     +-- css/
-        +-- style.css            # Global styles
+        +-- style.css
 ```
 
 ---
@@ -127,3 +118,4 @@ Everything else (empty folders, base templates, CSS, JS) is optional or supporti
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
