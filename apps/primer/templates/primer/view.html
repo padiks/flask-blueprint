@@ -1,0 +1,112 @@
+{# apps/primer/templates/primer/view.html #}
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+<div class="container mt-2">
+  <div class="card shadow-sm mx-auto" style="max-width: 960px;">
+    
+    <!-- Card header -->
+    <div class="card-body">
+      <h5 class="card-title border-bottom pb-2">
+        Flask Fundamentals: Templates & Operations
+      </h5>
+      <p>
+        Displaying basic operations in Flask, Blueprints, and Templates.
+        This is a simple card with a heading and a paragraph. It will adjust on mobile and desktop screens.
+        Dark mode will apply to the entire page, including navbar, card, body, and footer.
+      </p>
+    </div>
+
+    <div class="card-body">
+
+      <!-- Section 1 -->
+      <h4 class="fw-bold">
+        <span class="badge bg-warning text-dark me-2">1</span>
+        {{ message }}
+      </h4>
+
+      <hr>
+
+      <!-- Section 2 -->
+      <p class="fs-5 fw-semibold">
+        <span class="badge bg-warning text-dark me-2">2</span>
+        The sum of 48 and 50 is {{ sum }}
+      </p>
+
+      <hr>
+
+      <!-- Form -->
+      <form method="POST">
+        <div class="row align-items-end g-3 mt-2">
+
+          <div class="col-auto">
+            <span class="badge bg-warning text-dark">3</span>
+          </div>
+
+          <div class="col-md-3">
+            <label for="num1" class="form-label fw-semibold">First Number</label>
+            <input
+              type="number"
+              id="num1"
+              name="num1"
+              value="{{ request.form.num1 or 48 }}"
+              class="form-control"
+            >
+          </div>
+
+          <div class="col-md-3">
+            <label for="num2" class="form-label fw-semibold">Second Number</label>
+            <input
+              type="number"
+              id="num2"
+              name="num2"
+              value="{{ request.form.num2 or 50 }}"
+              class="form-control"
+            >
+          </div>
+
+          <div class="col-md-3">
+            <label for="result" class="form-label fw-semibold">Result</label>
+            <input
+              type="number"
+              id="result"
+              value="{{ result }}"
+              class="form-control"
+              disabled
+            >
+          </div>
+
+          <div class="col-md-auto">
+            <button type="submit" class="btn btn-primary">
+              Multiply
+            </button>
+          </div>
+
+        </div>
+      </form>
+
+      <!-- Result -->
+      {% if result is not none %}
+      <div class="mt-4">
+        <p class="fs-5 fw-semibold">
+          The result of the multiplication is {{ result }}
+        </p>
+      </div>
+      {% endif %}
+
+      <hr>
+
+      <!-- Actions -->
+      <a href="{{ url_for('primer.view') }}"
+         class="btn btn-sm btn-secondary">
+        Back
+      </a>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

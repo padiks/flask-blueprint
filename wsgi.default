@@ -1,0 +1,32 @@
+import os
+import sys
+
+# Add the directory containing this file to the Python module search path
+sys.path.insert(0, os.path.dirname(__file__))  # Add root folder (flaskapp) to the module path
+
+# Set the Flask environment to production (optional but recommended)
+os.environ['FLASK_ENV'] = 'production'
+
+# Import the application factory from the 'apps' package
+from apps import create_app  # Adjusted to import from 'apps'
+
+# Create an instance of the Flask application
+app = create_app()
+
+# Expose the Flask application as 'application', which is what WSGI servers expect
+application = app
+
+
+# === Load mod_wsgi for Python 3.8 32-bit ===
+# LoadModule wsgi_module "C:/Users/User/AppData/Local/Programs/Python/Python38-32/Lib/site-packages/mod_wsgi/server/mod_wsgi.cp38-win32.pyd"
+# === VirtualHost ===
+# You can use port 5000 (for dev) or port 80 (default)
+# <VirtualHost *:5000>
+#    ServerName flask.test
+#    http://127.0.0.1:5000/
+#    DocumentRoot "C:/laragon/www/flask"
+#    WSGIScriptAlias / "C:/laragon/www/flask/wsgi.py"
+#    <Directory "C:/laragon/www/flask">
+#        Require all granted
+#    </Directory>
+# </VirtualHost>

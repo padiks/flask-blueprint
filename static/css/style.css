@@ -1,0 +1,151 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+@import url('https://fonts.cdnfonts.com/css/source-sans-pro');
+
+/* Global font stack */
+body {
+  font-family: "Neucha", DejaVuSans, -apple-system, BlinkMacSystemFont, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Arial, sans-serif;
+  line-height: 1.7;
+  color: #222;
+  background-color: #f8f9fa;  /* Bootstrap bg-light color */
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* sticky footer */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6, .chapter {
+  font-weight: 500;
+}
+
+/* Paragraphs */
+p,  {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
+
+.card p {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: black;
+}
+
+/* Tables, buttons, selects, labels */
+table, table td, table th, button, select, select option, label {
+  font-family: "Source Sans Pro", "Neucha", Arial, Helvetica, sans-serif !important;
+  font-size: 1.12rem !important;
+  line-height: 1.55 !important;
+  font-weight: 400 !important;
+  color: #333 !important;
+}
+
+/* Shadows */
+:root {
+    --navbar-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    --card-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+/* Navbar styling */
+header .navbar {
+    background-color: #fff;
+    box-shadow: var(--navbar-shadow);
+    margin: 20px auto 30px auto; /* more spacing between navbar and card */
+    width: 95%;
+    /* max-width: 960px; */
+		max-width: 1140px;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Card styling */
+.card {
+    max-width: 800px;
+    width: 90%;
+	max-width: 900px;   /* wider card */
+    margin: 0 auto 2rem auto;            /* bottom spacing */
+    background-color: #fff;
+    border-radius: 0.5rem;               /* match navbar */
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12); /* slightly stronger shadow */
+}
+
+
+/* Buttons */
+.btn-sm {
+  min-width: 80px;
+}
+
+/* Table responsiveness */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Remove number input spinners/arrows */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    padding: 15px;
+  }
+
+  h3, h4 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .btn-sm {
+    min-width: 70px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Footer sticky + centered */
+footer.attribution {
+  margin-top: auto;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+}
+
+footer.attribution p {
+    margin: 0;
+    font-size: 1.15rem;
+}
+
+/* TEMP: make navbar and card same width and responsive */
+header .navbar,
+main .card {
+    width: 95%;
+    max-width: 1140px;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    header .navbar,
+    main .card {
+        width: 95%;
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 0;
+    }
+}
